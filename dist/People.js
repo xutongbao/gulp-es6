@@ -21,5 +21,5 @@ var People = function () {
 	return People;
 }();
 
-var people = new People('徐同保');
+var people = new People('徐同保3');
 console.log(people.getName());
