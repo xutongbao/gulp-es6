@@ -11,6 +11,11 @@ gulp.task('default',gulpsync.sync(['babel', 'minify-css', 'mytpl']),function () 
   
 });
 
+//监听文件是否修改
+gulp.task('watch', () => {
+    gulp.watch('src/*.*', ['default'])
+});
+
 gulp.task("babel", function () {
     return gulp.src(["src/People.js", "src/index.js"])
     	.pipe(concat('index.js')) 
@@ -18,13 +23,6 @@ gulp.task("babel", function () {
         .pipe(gulp.dest("dist"));
 });
 
-gulp.task('watch', function() {
-	return watch("src/*.js", function() {
-		gulp.src("src/*.js")
-        	.pipe(babel())
-        	.pipe(gulp.dest("dist"));
-	});
-});
 
 var staticize = {
 	getFileContent : function(tplPathName){
@@ -46,6 +44,9 @@ gulp.task('mytpl', function() {
 		'mytpl1': staticize.getFileContent('src/index1.tpl'),
 		'mytpl2': staticize.getFileContent('src/index2.tpl'),
 		'mytpl3': staticize.getFileContent('src/index3.tpl'),
+		'mytpl4': staticize.getFileContent('src/index4.tpl'),
+		'mytpl5': staticize.getFileContent('src/index5.tpl'),
+		'mytpl6': staticize.getFileContent('src/index6.tpl'),
 		'mycss': 'styles.css'
 	}
   	gulp.src('src/index.html')

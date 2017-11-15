@@ -2,21 +2,35 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>使用gulp ES6转ES5,已经替换模版</title>
+    <title>gulp 模版</title>
 
     <link rel="stylesheet" href="styles.css">
 
 </head>
 <body>
 
-    <div id="tpl1">模版1</div>
+	<div id='mytpl'>
+	    <div id="tpl1" class="block" data-show=true>模版1</div>
 
 
-    <div>模版2</div>
+	    <div id="tpl2" class="none" data-show=false>模版2</div>
 
 
-    <div>模版3</div>
+	    <div id="tpl3" class="none" data-show=false>模版3</div>
 
+
+	  	<div id="tpl4" class="none" data-show=false>模版4</div>
+
+
+	    <div id="tpl5" class="none" data-show=false>模版5</div>
+
+
+	    <div id="tpl6" class="none" data-show=false>模版6</div>
+
+    </div>
+
+	<button id='back'>上一步</button>
+    <button id='next'>下一步</button>
 
 	<script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.js"></script>
     <script src="index.js"></script>

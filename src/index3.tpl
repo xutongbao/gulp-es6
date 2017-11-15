@@ -1,1 +1,1 @@
-<div>模版3</div>
+<div id="tpl3" class="none" data-show=false>模版3</div>
