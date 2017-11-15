@@ -21,5 +21,6 @@ var People = function () {
 	return People;
 }();
 
-var people = new People('徐同保3');
+var people = new People('新内容');
 console.log(people.getName());
+$('#tpl1').text(people.getName());

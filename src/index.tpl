@@ -1,1 +1,1 @@
-<div>模版</div>
+<div id='tpl1'>模版1</div>
