@@ -21,22 +21,23 @@ var People = function () {
 	return People;
 }();
 
-var people = new People('新内容');
-console.log(people.getName());
-$('#back').click(function () {
-	var mytlpShow = $('#mytpl>div[data-show=true]');
-	var mytlpShowNext = mytlpShow.prev();
-	if (mytlpShowNext.length > 0) {
-		mytlpShow.removeClass('block').addClass('none').attr('data-show', false);
-		mytlpShowNext.removeClass('none').addClass('block').attr('data-show', true);
-	}
+$(function () {
+	var people = new People('新内容');
+	$('#back').click(function () {
+		var mytlpShow = $('#mytpl>div[data-show=true]');
+		var mytlpShowNext = mytlpShow.prev();
+		if (mytlpShowNext.length > 0) {
+			mytlpShow.removeClass('block').addClass('none').attr('data-show', false);
+			mytlpShowNext.removeClass('none').addClass('block').attr('data-show', true);
+		}
+	});
+	$('#next').click(function () {
+		var mytlpShow = $('#mytpl>div[data-show=true]');
+		var mytlpShowNext = mytlpShow.next();
+		if (mytlpShowNext.length > 0) {
+			mytlpShow.removeClass('block').addClass('none').attr('data-show', false);
+			mytlpShowNext.removeClass('none').addClass('block').attr('data-show', true);
+		}
+	});
+	var a = 3;
 });
-$('#next').click(function () {
-	var mytlpShow = $('#mytpl>div[data-show=true]');
-	var mytlpShowNext = mytlpShow.next();
-	if (mytlpShowNext.length > 0) {
-		mytlpShow.removeClass('block').addClass('none').attr('data-show', false);
-		mytlpShowNext.removeClass('none').addClass('block').attr('data-show', true);
-	}
-});
-var a = 3;

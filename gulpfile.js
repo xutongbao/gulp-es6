@@ -6,8 +6,9 @@ var fs = require("fs");
 let cleanCSS = require('gulp-clean-css');
 var concat = require('gulp-concat'); 
 var gulpsync = require('gulp-sync')(gulp); 
+var browserify = require('gulp-browserify');
 
-gulp.task('default',gulpsync.sync(['babel', 'minify-css', 'mytpl']),function () {  
+gulp.task('default',gulpsync.sync(['babel', 'minify-css', 'mytpl', 'scripts']),function () {  
   
 });
 
@@ -21,6 +22,17 @@ gulp.task("babel", function () {
     	.pipe(concat('index.js')) 
         .pipe(babel())
         .pipe(gulp.dest("dist"));
+});
+
+gulp.task('scripts', function() {
+    // Single entry point to browserify 
+    gulp.src('src/main.js')
+        .pipe(browserify({
+          insertGlobals : true,
+          debug : true
+        }))
+        .pipe(babel())
+        .pipe(gulp.dest('dist'))
 });
 
 
