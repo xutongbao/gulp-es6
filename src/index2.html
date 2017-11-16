@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>  
+    <meta charset="UTF-8">
+    <title>div对话框</title>
+        <style type="text/css">  
+            #dialog  
+            {  
+                display:none;  
+                border:1px solid #ddd;  
+                height:600px;  
+                width:900px;  
+                position:absolute; 
+                top:50%;
+                left:50%;  
+                margin-top: -300px; 
+                margin-left: -450px;
+                z-index:2;
+                background: #f8f8f8;  
+            }  
+        </style>  
+    </head>  
+    <body>  
+        <button id="open">弹出</button>
+        <div id="dialog">  
+            <button id="close" style="float: right;">X</button>
+            <div></div>  
+        </div>  
+        <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.js"></script>
+        <script type="text/javascript">  
+            $(function () {
+                $('#open').click(function () {
+                    show();
+                });
+                $('#close').click(function() {
+                    hide();
+                })
+                var dialog = $('#dialog');  
+                function show()  
+                {  
+                    dialog.css({'display': 'block'});
+                }  
+                function hide()  
+                {  
+                    dialog.css({'display': 'none'});
+                }  
+            });
+
+        </script>  
+    </body>  
+</html>  

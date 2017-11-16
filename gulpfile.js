@@ -67,9 +67,6 @@ gulp.task('browserify', function() {
 		.pipe(uglify({mangle: false, compress: {properties: false}, output: {quote_keys: true}}))
 		.pipe(sourcemaps.init({loadMaps: true}))
 		.pipe(sourcemaps.write("."))
-		//.pipe(uglify()
-		//.pipe(uglify({mangle: false, compress: {properties: false}, output: {quote_keys: true}}))
-		//.pipe(uglify({mangle: false, compress: {properties: false}, output: {quote_keys: true}}))
 		.pipe(gulp.dest("./dist"));
 });
 

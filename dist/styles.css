@@ -1,1 +1,1 @@
-div{color:green}.none{display:none}.block{display:block}div{font-size:20px}
+div{color:green}.none{display:none}.block{display:block}#dialog{display:none;border:1px solid #ddd;height:600px;width:900px;position:absolute;top:50%;left:50%;margin-top:-300px;margin-left:-450px;z-index:2;background:#f8f8f8}div{font-size:20px}
